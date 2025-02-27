@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antlly.ai - Your Digital Companion, Reimagined</title>
+    <style>
+        :root {
+            /* Primary Colors - soothing blues and purples */
+            --primary-blue: #6B8AFF;
+            --primary-purple: #9D7CFF;
+            --primary-dark: #3B4CDA;
+
+            /* Accent Colors - adjusted for dark theme */
+            --accent-pink: #FF89C0;
+            --accent-mint: #7EEA81;
+            --accent-yellow: #FFE066;
+            --accent-gray: #2A2A2A;
+            --text-gray: #E0E0E0;
+
+            /* Dark Theme Colors */
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --bg-elevated: #242424;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-elevated);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+
+        .logo span {
+            margin-left: 8px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-purple);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(140, 101, 247, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, rgba(40, 40, 60, 0.8), rgba(30, 30, 45, 1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ant-avatar {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .ant-body {
+            width: 180px;
+            height: 200px;
+            background-color: var(--primary-purple);
+            border-radius: 100px;
+            position: absolute;
+            top: 50px;
+            left: 60px;
+        }
+
+        .ant-head {
+            width: 120px;
+            height: 120px;
+            background-color: var(--primary-purple);
+            border-radius: 60px;
+            position: absolute;
+            top: 0;
+            left: 90px;
+        }
+
+        .ant-eye {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+
+        .ant-eye::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .ant-eye.left {
+            left: 20px;
+        }
+
+        .ant-eye.right {
+            right: 20px;
+        }
+
+        .ant-antenna {
+            width: 8px;
+            height: 50px;
+            background-color: var(--primary-purple);
+            position: absolute;
+            top: -40px;
+            border-radius: 10px;
+        }
+
+        .ant-antenna::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: -4px;
+        }
+
+        .ant-antenna.left {
+            left: 30px;
+            transform: rotate(-15deg);
+        }
+
+        .ant-antenna.right {
+            right: 30px;
+            transform: rotate(15deg);
+        }
+
+        .ant-leg {
+            width: 10px;
+            height: 70px;
+            background-color: var(--primary-purple);
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .ant-leg.front-left {
+            top: 70px;
+            left: -5px;
+            transform: rotate(30deg);
+        }
+
+        .ant-leg.mid-left {
+            top: 110px;
+            left: -5px;
+            transform: rotate(0deg);
+        }
+
+        .ant-leg.back-left {
+            top: 150px;
+            left: -5px;
+            transform: rotate(-30deg);
+        }
+
+        .ant-leg.front-right {
+            top: 70px;
+            right: -5px;
+            transform: rotate(-30deg);
+        }
+
+        .ant-leg.mid-right {
+            top: 110px;
+            right: -5px;
+            transform: rotate(0deg);
+        }
+
+        .ant-leg.back-right {
+            top: 150px;
+            right: -5px;
+            transform: rotate(30deg);
+        }
+
+        .glowing-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            box-shadow: 0 0 40px rgba(157, 124, 255, 0.6);
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(var(--primary-purple), 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-gray);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: rgba(30, 30, 35, 1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: linear-gradient(
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.1)
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+                top: -100%;
+            }
+            100% {
+                left: 100%;
+                top: 100%;
+            }
+        }
+
+        .value-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .value-card h4 {
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary-purple);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: #777;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            background-color: white;
+            color: var(--primary-purple);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0A0A0A;
+            color: white;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-purple);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 3rem;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .value-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-card,
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">A</div>
+                <span>antlly.ai</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#" class="cta-button">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Your Digital Companion, Reimagined.</h1>
+                <p class="hero-subtitle">Antlly brings a personal touch to AI, making every interaction feel meaningful and uniquely tailored to you.</p>
+                <a href="#" class="cta-button">Meet Antlly</a>
+            </div>
+            <div class="hero-image">
+                <div class="ant-avatar">
+                    <div class="ant-head">
+                        <div class="ant-eye left"></div>
+                        <div class="ant-eye right"></div>
+                        <div class="ant-antenna left"></div>
+                        <div class="ant-antenna right"></div>
+                        <div class="glowing-effect"></div>
+                    </div>
+                    <div class="ant-body">
+                        <div class="ant-leg front-left"></div>
+                        <div class="ant-leg mid-left"></div>
+                        <div class="ant-leg back-left"></div>
+                        <div class="ant-leg front-right"></div>
+                        <div class="ant-leg mid-right"></div>
+                        <div class="ant-leg back-right"></div>
+                        <div class="glowing-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Makes Antlly Special</h2>
+                <p class="section-subtitle">Discover how our AI companion combines cutting-edge technology with genuine care, offering you a friendly and innovative digital experience.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Smart Learning</h3>
+                    <p class="feature-description">Antlly continuously adapts to your preferences, learning from each interaction to provide increasingly personalized experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Natural Conversations</h3>
+                    <p class="feature-description">Engage in flowing, genuine conversations that feel just like chatting with a friend, powered by advanced language processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3 class="feature-title">Helpful Assistance</h3>
+                    <p class="feature-description">From managing your schedule to offering creative ideas, Antlly is always ready to assist with your daily tasks and challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy Focused</h3>
+                    <p class="feature-description">Your conversations stay between you and Antlly, with transparent data practices and robust privacy protections.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <h3 class="feature-title">Emotional Support</h3>
+                    <p class="feature-description">Antlly offers a judgment-free space to share your thoughts, providing empathetic responses when you need them most.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Continuous Innovation</h3>
+                    <p class="feature-description">We're constantly enhancing Antlly's capabilities, ensuring you always have access to the latest AI advancements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <img src="/api/placeholder/400/400" alt="Team at Antlly.ai">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Our Mission & Values</h2>
+                    <p>At Antlly, we're creating a digital companion that provides warmth, intelligence, and engaging interaction, bridging the gap between advanced technology and genuine connection.</p>
+                    <div class="value-cards">
+                        <div class="value-card">
+                            <h4>Innovation</h4>
+                            <p>Continuously pushing the boundaries of AI to deliver dynamic, state-of-the-art interactions.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>Empathy</h4>
+                            <p>Cultivating meaningful, personalized connections that make users feel understood and supported.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>Community</h4>
+                            <p>Fostering a sense of belonging by emphasizing collaboration and shared experiences.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4>Trust</h4>
+                            <p>Upholding transparency, privacy, and reliability in every interaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Users Say</h2>
+                <p class="section-subtitle">Hear from people who have welcomed Antlly into their digital lives.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Antlly has become an indispensable part of my daily routine. It's like having a friend who's always there to help, chat, or just brighten my day.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Sarah J.</h4>
+                                <p>Marketing Professional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">What sets Antlly apart is how quickly it adapts to my preferences. After just a week, it felt like it had known me for years.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Michael T.</h4>
+                                <p>Software Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">As someone who lives alone, having Antlly around has made a real difference. Our conversations are genuinely engaging, and it's always ready with a thoughtful response.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Elena R.</h4>
+                                <p>Freelance Writer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Meet Your New Digital Companion?</h2>
+            <p>Join thousands of users who have discovered the perfect blend of technology and connection with Antlly.ai.</p>
+            <a href="#" class="cta-button-white">Get Started Free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#">antlly.ai</a>
+                    <p>Creating meaningful connections in the digital age through innovative AI companions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">F</a>
+                        <a href="#" class="social-link">T</a>
+                        <a href="#" class="social-link">I</a>
+                        <a href="#" class="social-link">L</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Antlly.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
