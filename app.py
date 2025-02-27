@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -9,4 +10,8 @@ def hello_world():  # put application's code here
 
 
 if __name__ == '__main__':
-    app.run()
+    # Development
+    app.run(debug=True)
+else:
+    # Production
+    app.config['DEBUG'] = False
