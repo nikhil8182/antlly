@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antlly.ai - Your Digital Companion, Reimagined</title>
+    <meta name="description" content="Antlly.ai - Your smart, lovable AI pet companion designed to bring joy, warmth, and emotional connection into your life.">
+    <meta name="keywords" content="AI pet, digital companion, virtual pet, AI companion, Antlly, Onwords">
+    <meta name="author" content="Onwords">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antlly.ai/">
+    <meta property="og:title" content="Antlly.ai - Your AI Companion with a Heart">
+    <meta property="og:description" content="Experience true companionship with Antlly.ai, your personalized AI pet companion.">
+    <meta property="og:image" content="https://antlly.ai/static/img/antlly-social.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://antlly.ai/">
+    <meta property="twitter:title" content="Antlly.ai - Your AI Companion with a Heart">
+    <meta property="twitter:description" content="Experience true companionship with Antlly.ai, your personalized AI pet companion.">
+    <meta property="twitter:image" content="https://antlly.ai/static/img/antlly-social.jpg">
+    
+    <title>Antlly.ai - Your AI Companion with a Heart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -1091,6 +1109,7 @@
         }
 
         /* Responsive */
+        /* Tablet Optimization */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
@@ -1106,23 +1125,41 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .about-image {
                 order: 2;
+                max-width: 80%;
+                margin: 0 auto;
             }
 
             .about-text {
                 order: 1;
             }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
         }
 
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
+                color: var(--primary-neon-teal);
             }
 
             nav ul {
@@ -1131,10 +1168,12 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background-color: var(--bg-elevated);
+                background-color: var(--primary-deep-midnight);
                 flex-direction: column;
                 padding: 2rem;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                border-top: 2px solid var(--primary-neon-teal);
+                z-index: 100;
             }
 
             nav ul.show {
@@ -1144,17 +1183,35 @@
             nav ul li {
                 margin: 1rem 0;
             }
+            
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+            }
 
             .hero {
                 padding: 130px 0 80px;
             }
 
             .hero-title {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
 
             .section-title {
                 font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .value-cards {
@@ -1162,32 +1219,81 @@
             }
 
             .cta h2 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
-        }
-
-        @media (max-width: 768px) {
-            .feature-card,
-            .testimonial-card {
-                padding: 2rem;
-            }
-
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+            }
+            
+            .company-info {
+                padding: 25px 20px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Small Mobile Optimization */
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .feature-card {
+                padding: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
+                width: 100%;
             }
-
+            
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+            }
+            
             .cta h2 {
                 font-size: 2rem;
             }
             
+            .cta p {
+                font-size: 1.1rem;
+            }
+            
             .company-info {
-                padding: 25px 20px;
+                padding: 20px 15px;
+            }
+            
+            .footer-brand a {
+                font-size: 2rem;
             }
         }
     </style>
@@ -1377,6 +1483,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
@@ -1397,6 +1504,24 @@
                 }
             });
         });
+        
+        // Performance optimization - add defer to external resources
+        window.addEventListener('load', function() {
+            // Page has loaded
+            document.body.classList.add('loaded');
+            
+            // Register service worker for PWA capabilities if supported
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/static/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                }).catch(function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            }
+        });
     </script>
+    
+    <!-- Google Analytics or other analytics code would go here -->
+    
 </body>
 </html>

@@ -1,14 +1,27 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 import os
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def home():
     return render_template('index.html')
 
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return app.send_static_file('sitemap.xml')
+
+
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('index.html'), 404
 
 
 if __name__ == '__main__':
@@ -17,3 +30,4 @@ if __name__ == '__main__':
 else:
     # Production
     app.config['DEBUG'] = False
+    app.config['PROPAGATE_EXCEPTIONS'] = True
