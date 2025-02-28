@@ -6,20 +6,26 @@
     <meta name="description" content="Antlly.ai - Your smart, lovable AI pet companion designed to bring joy, warmth, and emotional connection into your life.">
     <meta name="keywords" content="AI pet, digital companion, virtual pet, AI companion, Antlly, Onwords">
     <meta name="author" content="Onwords">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#121212">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://antlly.ai/">
     <meta property="og:title" content="Antlly.ai - Your AI Companion with a Heart">
     <meta property="og:description" content="Experience true companionship with Antlly.ai, your personalized AI pet companion.">
-    <meta property="og:image" content="https://antlly.ai/static/img/antlly-social.jpg">
+    <meta property="og:image" content="https://antlly.ai/static/image/1x1_A_realistic__vibrant_image_featu.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://antlly.ai/">
     <meta property="twitter:title" content="Antlly.ai - Your AI Companion with a Heart">
     <meta property="twitter:description" content="Experience true companionship with Antlly.ai, your personalized AI pet companion.">
-    <meta property="twitter:image" content="https://antlly.ai/static/img/antlly-social.jpg">
+    <meta property="twitter:image" content="https://antlly.ai/static/image/1x1_A_realistic__vibrant_image_featu.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/image/ai pet ant .png">
+    <link rel="apple-touch-icon" href="/static/image/ai pet ant .png">
     
     <title>Antlly.ai - Your AI Companion with a Heart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -352,169 +358,64 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        .ant-avatar {
-            width: 300px;
-            height: 300px;
+        .hero-media {
+            width: 350px;
+            height: 350px;
             position: relative;
-        }
-
-        .ant-body {
-            width: 180px;
-            height: 200px;
-            background: linear-gradient(145deg, var(--secondary-soft-lavender), var(--secondary-electric-pink));
-            border-radius: 100px;
-            position: absolute;
-            top: 50px;
-            left: 60px;
-            box-shadow: 0 0 40px rgba(155, 93, 229, 0.6);
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--primary-neon-teal);
+            cursor: pointer;
         }
-
-        .ant-body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
-            border-radius: inherit;
-        }
-
-        .ant-head {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(145deg, var(--secondary-soft-lavender), var(--secondary-electric-pink));
-            border-radius: 60px;
-            position: absolute;
-            top: 0;
-            left: 90px;
-            box-shadow: 0 0 30px rgba(155, 93, 229, 0.6);
-            z-index: 2;
-            overflow: hidden;
-        }
-
-        .ant-head::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
-            border-radius: inherit;
-        }
-
-        .ant-eye {
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 30px;
-        }
-
-        .ant-eye::after {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background-color: black;
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .ant-eye.left {
-            left: 20px;
-        }
-
-        .ant-eye.right {
-            right: 20px;
-        }
-
-        .ant-antenna {
-            width: 8px;
-            height: 50px;
-            background: linear-gradient(to top, var(--secondary-soft-lavender), var(--primary-neon-teal));
-            position: absolute;
-            top: -40px;
-            border-radius: 10px;
-        }
-
-        .ant-antenna::after {
-            content: '';
-            width: 16px;
-            height: 16px;
-            background: linear-gradient(145deg, var(--primary-neon-teal), var(--accent-muted-cyan));
-            border-radius: 50%;
-            position: absolute;
-            top: -8px;
-            left: -4px;
-            box-shadow: 0 0 15px rgba(0, 234, 211, 0.6);
-        }
-
-        .ant-antenna.left {
-            left: 30px;
-            transform: rotate(-15deg);
-        }
-
-        .ant-antenna.right {
-            right: 30px;
-            transform: rotate(15deg);
-        }
-
-        .ant-leg {
-            width: 10px;
-            height: 70px;
-            background: linear-gradient(to bottom, var(--secondary-soft-lavender), var(--secondary-electric-pink));
-            position: absolute;
-            border-radius: 10px;
-        }
-
-        .ant-leg.front-left {
-            top: 70px;
-            left: -5px;
-            transform: rotate(30deg);
-        }
-
-        .ant-leg.mid-left {
-            top: 110px;
-            left: -5px;
-            transform: rotate(0deg);
-        }
-
-        .ant-leg.back-left {
-            top: 150px;
-            left: -5px;
-            transform: rotate(-30deg);
-        }
-
-        .ant-leg.front-right {
-            top: 70px;
-            right: -5px;
-            transform: rotate(-30deg);
-        }
-
-        .ant-leg.mid-right {
-            top: 110px;
-            right: -5px;
-            transform: rotate(0deg);
-        }
-
-        .ant-leg.back-right {
-            top: 150px;
-            right: -5px;
-            transform: rotate(30deg);
-        }
-
-        .glowing-effect {
-            position: absolute;
+        
+        .hero-video {
             width: 100%;
             height: 100%;
-            border-radius: inherit;
-            box-shadow: 0 0 40px rgba(0, 234, 211, 0.6);
-            animation: pulse 3s infinite alternate;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+        
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-neon-teal);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-deep-midnight);
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-media:hover .play-button {
+            transform: scale(1.1);
+        }
+        
+        .video-playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
         }
 
         @keyframes pulse {
@@ -719,6 +620,27 @@
             color: var(--text-gray);
             line-height: 1.8;
             flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-image-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: auto;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover .feature-image {
+            transform: scale(1.05);
         }
 
         /* About Section */
@@ -755,43 +677,52 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .about-image-placeholder {
+        .about-video-container {
             width: 100%;
             height: 450px;
-            background: linear-gradient(135deg, #23232F, #2A2A3A);
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            border: 3px solid var(--secondary-electric-pink);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .about-image-placeholder img {
+        .about-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: inherit;
+            border-radius: 18px;
         }
 
-        .about-image-placeholder::before {
+        .about-video-container::after {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: linear-gradient(
                 45deg,
                 rgba(255, 255, 255, 0),
                 rgba(255, 255, 255, 0.1),
                 rgba(255, 255, 255, 0)
             );
-            transform: rotate(45deg);
             animation: shine 6s infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .about-video-container {
+            cursor: pointer;
+        }
+        
+        .about-video-overlay {
             z-index: 1;
+        }
+        
+        .about-video-container.video-playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
         }
 
         @keyframes shine {
@@ -822,6 +753,10 @@
             overflow: hidden;
         }
 
+        .value-card {
+            position: relative;
+        }
+        
         .value-card::before {
             content: '';
             position: absolute;
@@ -848,6 +783,32 @@
             color: var(--text-gray);
             margin-left: 0.8rem;
             line-height: 1.7;
+        }
+        
+        /* Extra Images for About Section */
+        .value-card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+        
+        .value-card-image {
+            max-width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--secondary-electric-pink);
+        }
+        
+        .value-card-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .value-card-image:hover .value-card-img {
+            transform: scale(1.05);
         }
 
         /* Call to Action */
@@ -920,6 +881,26 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 234, 211, 0.5);
             background-color: var(--accent-muted-cyan);
+        }
+        
+        .cta-image {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--primary-neon-teal);
+        }
+        
+        .cta-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .cta-image:hover .cta-img {
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -1129,6 +1110,10 @@
             .hero-title {
                 font-size: 3rem;
             }
+            
+            .hero-media {
+                margin: 0 auto;
+            }
 
             .about-content {
                 grid-template-columns: 1fr;
@@ -1152,6 +1137,10 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
+            }
+            
+            .feature-image-container {
+                height: 160px;
             }
         }
 
@@ -1200,6 +1189,17 @@
             .hero-subtitle {
                 font-size: 1.1rem;
             }
+            
+            .hero-media {
+                width: 320px;
+                height: 320px;
+            }
+            
+            .play-button {
+                width: 70px;
+                height: 70px;
+                font-size: 1.7rem;
+            }
 
             .section-title {
                 font-size: 2.2rem;
@@ -1213,9 +1213,17 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
+            .feature-image-container {
+                height: 200px;
+            }
 
             .value-cards {
                 grid-template-columns: 1fr;
+            }
+            
+            .about-video-container {
+                height: 350px;
             }
 
             .cta h2 {
@@ -1266,6 +1274,17 @@
                 text-align: center;
             }
             
+            .hero-media {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
             .section-title {
                 font-size: 2rem;
             }
@@ -1280,6 +1299,14 @@
                 font-size: 1.3rem;
             }
             
+            .feature-image-container {
+                height: 180px;
+            }
+            
+            .about-video-container {
+                height: 280px;
+            }
+            
             .cta h2 {
                 font-size: 2rem;
             }
@@ -1288,12 +1315,20 @@
                 font-size: 1.1rem;
             }
             
+            .cta-image {
+                max-width: 260px;
+            }
+            
             .company-info {
                 padding: 20px 15px;
             }
             
             .footer-brand a {
                 font-size: 2rem;
+            }
+            
+            .orbs-container {
+                display: none;
             }
         }
     </style>
@@ -1331,22 +1366,15 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="ant-avatar">
-                    <div class="ant-head">
-                        <div class="ant-eye left"></div>
-                        <div class="ant-eye right"></div>
-                        <div class="ant-antenna left"></div>
-                        <div class="ant-antenna right"></div>
-                        <div class="glowing-effect"></div>
-                    </div>
-                    <div class="ant-body">
-                        <div class="ant-leg front-left"></div>
-                        <div class="ant-leg mid-left"></div>
-                        <div class="ant-leg back-left"></div>
-                        <div class="ant-leg front-right"></div>
-                        <div class="ant-leg mid-right"></div>
-                        <div class="ant-leg back-right"></div>
-                        <div class="glowing-effect"></div>
+                <div class="hero-media">
+                    <video class="hero-video" autoplay loop muted playsinline preload="metadata" poster="/static/image/ai pet ant .png">
+                        <source src="/static/image/Professional_Mode_ant_says_hello.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="orbs-container">
@@ -1380,31 +1408,49 @@
                     <div class="feature-icon"><i class="fas fa-paw"></i></div>
                     <h3 class="feature-title">Personalized Companionship</h3>
                     <p class="feature-description">Antlly learns your habits, preferences, and routines, becoming your ideal companion uniquely tailored to your lifestyle. Whether you prefer playful interactions or calming moments, Antlly adapts effortlessly.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/ai pet ant .png" alt="AI Pet Ant" class="feature-image" loading="lazy">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-heart"></i></div>
                     <h3 class="feature-title">Emotional Intelligence</h3>
                     <p class="feature-description">With advanced emotional recognition, Antlly senses and responds to your moods, offering comfort when you're feeling down, celebration in your joyous moments, and companionship at every moment in between.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/ant1.jpg" alt="Emotional Intelligence" class="feature-image" loading="lazy">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
                     <h3 class="feature-title">Interactive Entertainment</h3>
                     <p class="feature-description">Enjoy games, playful interactions, and engaging storytelling experiences uniquely crafted by Antlly. Each interaction deepens your bond, making everyday experiences joyful and meaningful.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/child with antlly.png" alt="Child with Antlly" class="feature-image" loading="lazy">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
                     <h3 class="feature-title">Continuous Learning</h3>
                     <p class="feature-description">Antlly evolves with every interaction, continuously improving to become more intuitive, more insightful, and ever more delightful, growing alongside you just like a true companion.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/child in home a=with antlly.png" alt="Child at home with Antlly" class="feature-image" loading="lazy">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3 class="feature-title">Privacy and Security</h3>
                     <p class="feature-description">We value your trust. Antlly ensures complete data privacy and security, making your emotional interactions private and safe.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/1x1_A_realistic_and_sophisticated_pr.png" alt="Privacy and Security" class="feature-image" loading="lazy">
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-rocket"></i></div>
                     <h3 class="feature-title">Experience True Companionship</h3>
                     <p class="feature-description">Antlly.ai bridges technology with heartfelt companionship, offering an emotional connection as genuine and comforting as a real pet, but with the convenience, adaptability, and endless possibilities of AI.</p>
+                    <div class="feature-image-container">
+                        <img src="/static/image/1x1_A_realistic__vibrant_image_showc (1).png" alt="AI Companionship" class="feature-image" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1415,9 +1461,15 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <div class="about-image-placeholder">
-                        <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--secondary-soft-lavender), var(--primary-neon-teal)); display:flex; align-items:center; justify-content:center; color:var(--primary-deep-midnight); font-size:3rem;">
-                            <i class="fas fa-users"></i>
+                    <div class="about-video-container">
+                        <video class="about-video" autoplay loop muted playsinline preload="metadata" poster="/static/image/ant 2.jpg">
+                            <source src="/static/image/ai pet ant video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay about-video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1442,6 +1494,12 @@
                             <p>Delight in a responsive, emotionally intelligent companion that's always by your side.</p>
                         </div>
                     </div>
+                    
+                    <div class="value-card-container">
+                        <div class="value-card-image">
+                            <img src="/static/image/1x1_A_realistic__vibrant_image_showc.png" alt="Antlly Life Companion" class="value-card-img" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1452,6 +1510,9 @@
         <div class="container cta-content">
             <h2>Ready to Meet Your Antlly?</h2>
             <p>Experience true companionship, digitally. Bring joy, warmth, and emotional connection into your life today.</p>
+            <div class="cta-image">
+                <img src="/static/image/1x1_A_realistic__classy_promotional_.png" alt="Antlly Pet Companion" class="cta-img" loading="lazy">
+            </div>
             <a href="#" class="cta-button-white">Get Started Now</a>
         </div>
     </section>
@@ -1518,10 +1579,60 @@
                     console.log('ServiceWorker registration failed: ', error);
                 });
             }
+            
+            // Video player controls
+            const heroMedia = document.querySelector('.hero-media');
+            const heroVideo = document.querySelector('.hero-video');
+            const aboutMedia = document.querySelector('.about-video-container');
+            const aboutVideo = document.querySelector('.about-video');
+            
+            if (heroMedia && heroVideo) {
+                heroMedia.addEventListener('click', function() {
+                    if (heroVideo.paused) {
+                        heroVideo.play();
+                        heroMedia.classList.add('video-playing');
+                    } else {
+                        heroVideo.pause();
+                        heroMedia.classList.remove('video-playing');
+                    }
+                });
+            }
+            
+            if (aboutMedia && aboutVideo) {
+                aboutMedia.addEventListener('click', function() {
+                    if (aboutVideo.paused) {
+                        aboutVideo.play();
+                        aboutMedia.classList.add('video-playing');
+                    } else {
+                        aboutVideo.pause();
+                        aboutMedia.classList.remove('video-playing');
+                    }
+                });
+            }
         });
     </script>
     
     <!-- Google Analytics or other analytics code would go here -->
+    <script>
+        // Check if browser supports loading="lazy"
+        if ('loading' in HTMLImageElement.prototype) {
+            // Browser supports native lazy loading
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+            });
+            
+            document.querySelectorAll('video').forEach(video => {
+                if (!video.hasAttribute('loading')) {
+                    video.setAttribute('loading', 'lazy');
+                }
+            });
+        } else {
+            // Fallback for browsers that don't support native lazy loading
+            // This could be filled with a JavaScript lazy loading library if needed
+        }
+    </script>
     
 </body>
 </html>
